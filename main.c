@@ -6,22 +6,22 @@
 #define PI ( 3.1415926535 )
 
 char
-is_even(int value) {
+is_even(int value) {  // Retorna se o número é par
     return value % 2 == 0;
 }
 
 char
-is_odd(int value) {
+is_odd(int value) { // Retorna se o número é ímpar
     return !is_even(value);
 }
 
 double
-f(double t) {
+f(double t) {  // função f(x)
     return 1.0/sqrt(2 * PI) * exp(-(t*t)/2);
 }
 
 double
-int_f(double from, double to, int points) {
+int_f(double from, double to, int points) {  // ∫f(x)
     assert(is_odd(points));
     double h = (to - from)/(points - 1);
     double acc = 0;
@@ -36,16 +36,16 @@ int_f(double from, double to, int points) {
 }
 
 double
-F(double x) {
+F(double x) {  // equação proposta
     return int_f(0.0, x, 13) - 0.45;
 }
 
 double
-newton_root(
-        double (*f)(double),
-        double (*f_prime)(double),
-        double x0,
-        double EPS) {
+newton_root(  // método de newton
+        double (*f)(double), // função para achar a raiz
+        double (*f_prime)(double), // funcão derivada
+        double x0, // ponto inicial
+        double EPS /* Tolerância*/) {
 
     double eps = 10;
     double x = x0;
