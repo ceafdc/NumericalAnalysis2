@@ -21,7 +21,7 @@ f(double t) {  // função f(x)
 }
 
 double
-int_f(double from, double to, int points) {  // ∫f(x)
+int_f(double from, double to, int points) {  // ∫f(x)  Pelo método de Simpson
     assert(is_odd(points));
     double h = (to - from)/(points - 1);
     double acc = 0;
