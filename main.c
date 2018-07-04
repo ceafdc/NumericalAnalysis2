@@ -37,7 +37,7 @@ int_f(double from, double to, int points) {
 
 double
 F(double x) {
-    return int_f(0.0, x, 7) - 0.45;
+    return int_f(0.0, x, 13) - 0.45;
 }
 
 double
@@ -66,7 +66,7 @@ main(int argc, char *argv[]) {
     printf("F(1) * F(2) = %lf < 0\n", F(1) * F(2));
     puts("Portanto F possui raiz no intervalo [1, 2]");
     double root = newton_root(F, f, 0.5, 1e-10);
-    printf("Pelo método de newton, a raiz de F no intervalo é em x = %lf\n", root);
+    printf("Pelo metodo de newton, a raiz de F no intervalo ocorre em x = %lf\n", root);
     printf("F(%lf) = %lf\n", root, F(root));
 
     return EXIT_SUCCESS;
